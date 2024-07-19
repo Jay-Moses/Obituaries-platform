@@ -34,3 +34,16 @@ The Obituary Management Platform allows users to submit and view obituaries onli
        content TEXT NOT NULL,
        author VARCHAR(255) NOT NULL
    );
+## Configure Apache Virtual Host
+
+Update your `httpd.conf` or `apache2.conf` with the following configuration:
+
+```apache
+<VirtualHost *:80>
+    DocumentRoot "C:/path/to/your/application"
+    ServerName localhost
+    <Directory "C:/path/to/your/application">
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
